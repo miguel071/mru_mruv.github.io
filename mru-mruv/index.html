@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./CSS/styles.css">
+    <title>Forumalrios MRU - MRUV</title>
+</head>
+
+<body>
+    <div class="conceptos_mru">
+        <h1>Resumen de conceptos básicos MRU/MRUV</h1>
+    <p class="mru">
+    <h3>Concepto de MRU</h3> (Movimiento Rectilíneo Uniforme) El Movimiento Rectilíneo
+    Uniforme (MRU) es aquel en el que un objeto se desplaza en línea recta con
+    velocidad constante. En este tipo de movimiento, la distancia recorrida en
+    intervalos de tiempo iguales es la misma, y la aceleración es cero.
+</p>
+    <img src="./IMAGENES/mru.jpg" alt="img_mru" class="imagen-mru">
+    <p class="ejemplo">
+        <h3>Ejemplo 1:</h3>
+        <p>
+        Un móvil avanza con MRU a razón de 5 m/s durante 10 s. Calcular la distancia recorrida.
+        Solución:   
+        Sabemos que el móvil avanza con MRU y además tenemos los siguientes datos:    
+        Rapidez: v = 5 m/s
+        Tiempo: t = 10 s.
+        Distancia: d = ?
+        </p>
+        <img src="./IMAGENES/ejemplo_mru.jpg" alt="ejemplo_mru">
+        </p>
+        Calcularemos la distancia «d» empleando las fórmulas:
+        </p>
+        <img src="./IMAGENES/forumulas_mru.jpg" alt="forumulas_mru">
+    </div>
+
+    <div class="concepto_murv">
+        <p class="mruv">
+            <h3>Concepto de MRUV</h3> (Movimiento Rectilíneo Uniformemente Variado) El
+            Movimiento Rectilíneo Uniformemente Variado (MRUV) es aquel en el que un
+            objeto se mueve en línea recta con aceleración constante. En este caso, la
+            velocidad del objeto cambia de manera uniforme a lo largo del tiempo, lo
+            que implica que recorre distancias diferentes en intervalos de tiempo
+            iguales.
+        </p>
+
+        <p>El movimiento rectilíneo uniformemente variado o MRUV es un movimiento que ocurre sobre 
+                una línea recta con aceleración constante. En el MRUV la aceleración es constante, nunca va a cambiar,
+                siempre es la misma. Mucha atención, lo constante es la aceleración, no la velocidad.
+        </p>
+
+        <img src="./IMAGENES/umrv.jpg" alt="img_murv">
+
+        <p class="ejemplo_mruv">
+                <h3>Ejemplo 1:</h3>
+                Te diriges hacia tu trabajo y en el instante en que las luces del semáforo se ponen en verde,
+                un automóvil que ha estado esperando a tu lado acelera a razón de 1,2 m/s2, mientras que un segundo automóvil,
+                que acaba de llegar en ese preciso instante,
+                continúa con una velocidad constante de 36 km/h. Calcular:
+                ¿Cuánto tiempo se necesita para que el primer automóvil alcance al segundo?
+        </p>
+        <p>
+            Solución:
+            En este problema, tenemos 2 autos, uno que parte del reposo (0 m/s) con aceleración de 1,2 m/s2, es decir, 
+            avanza con MRUV (movimiento rectilíneo uniformemente variado). Mientras que el segundo auto, 
+            avanza con velocidad constante de 36 km/h, es decir, con MRU (movimiento rectilíneo uniforme).
+        </p>
+        <img src="./IMAGENES/ejemplo_mruv.jpg" alt="ejemplo_mruv">
+        <p>
+            Trabajaremos con todos los valores expresados en el sistema internacional,
+            por ello, vamos a convertir los 36 km/h a m/s, usando el factor 5/18:
+        </p>
+        <img src="./IMAGENES/forumula_mruv.jpg" alt="forumula_mruv">
+        <p>
+            Entonces, 36 km/h equivalen a 10 m/s. Colocamos el gráfico nuevamente, ahora con los 10 m/s:
+        </p>
+        <img src="./IMAGENES/respuesta_umrv.jpg" alt="respuesta_umrv">
+    </div>
+
+
+
+    <h1>Calculadora de Movimiento Rectilíneo</h1>
+
+    <div class="formula">
+        <h2>MRU: Calcular Distancia (s = vt)</h2>
+        <label for="mru_v">Velocidad (v) [m/s]:</label>
+        <input type="number" id="mru_v" placeholder="m/s" required>
+        <br>
+        <label for="mru_t">Tiempo (t) [s]:</label>
+        <input type="number" id="mru_t" placeholder="s" required>
+        <br>
+        <button onclick="calcularMRU()">Calcular Distancia (s)</button>
+        <p id="mru_result"></p>
+    </div>
+
+    <div class="formula">
+        <h2>MRU: Calcular Velocidad (v = s/t)</h2>
+        <label for="mru_v2">Distancia (s) [m]:</label>
+        <input type="number" id="mru_v2" placeholder="m" required>
+        <br>
+        <label for="mru_t2">Tiempo (t) [s]:</label>
+        <input type="number" id="mru_t2" placeholder="s" required>
+        <br>
+        <button onclick="calcularVelocidad()">Calcular Velocidad (v)</button>
+        <p id="mru_v_result"></p>
+    </div>
+
+    <div class="formula">
+        <h2>MRU: Calcular Tiempo (t = s/v)</h2>
+        <label for="mru_s">Distancia (s) [m]:</label>
+        <input type="number" id="mru_s" placeholder="m" required>
+        <br>
+        <label for="mru_v3">Velocidad (v) [m/s]:</label>
+        <input type="number" id="mru_v3" placeholder="m/s" required>
+        <br>
+        <button onclick="calcularTiempo()">Calcular Tiempo (t)</button>
+        <p id="mru_t_result"></p>
+    </div>
+
+    <div class="formula">
+        <h2>MRUV: Calcular Distancia (s = v<sub>0</sub>t + (1/2)at²)</h2>
+        <label for="mruv_v0">Velocidad Inicial (v<sub>0</sub>) [m/s]:</label>
+        <input type="number" id="mruv_v0" placeholder="m/s" required>
+        <br>
+        <label for="mruv_a">Aceleración (a) [m/s²]:</label>
+        <input type="number" id="mruv_a" placeholder="m/s²" required>
+        <br>
+        <label for="mruv_t">Tiempo (t) [s]:</label>
+        <input type="number" id="mruv_t" placeholder="s" required>
+        <br>
+        <button onclick="calcularMRUV()">Calcular Distancia (s)</button>
+        <p id="mruv_result"></p>
+    </div>
+
+    <div class="formula">
+        <h2>MRUV: Calcular Velocidad Final (v = v<sub>0</sub> + at)</h2>
+        <label for="mruv_v0_2">Velocidad Inicial (v<sub>0</sub>) [m/s]:</label>
+        <input type="number" id="mruv_v0_2" placeholder="m/s" required>
+        <br>
+        <label for="mruv_a_2">Aceleración (a) [m/s²]:</label>
+        <input type="number" id="mruv_a_2" placeholder="m/s²" required>
+        <br>
+        <label for="mruv_t_2">Tiempo (t) [s]:</label>
+        <input type="number" id="mruv_t_2" placeholder="s" required>
+        <br>
+        <button onclick="calcularVelocidadFinal()">Calcular Velocidad Final (v)</button>
+        <p id="mruv_v_result"></p>
+    </div>
+
+    <div class="formula">
+        <h2>MRUV: Calcular Distancia (v² = v<sub>0</sub>² + 2as)</h2>
+        <label for="mruv_v0_3">Velocidad Inicial (v<sub>0</sub>) [m/s]:</label>
+        <input type="number" id="mruv_v0_3" placeholder="m/s" required>
+        <br>
+        <label for="mruv_a_3">Aceleración (a) [m/s²]:</label>
+        <input type="number" id="mruv_a_3" placeholder="m/s²" required>
+        <br>
+        <label for="mruv_s">Distancia (s) [m]:</label>
+        <input type="number" id="mruv_s" placeholder="m" required>
+        <br>
+        <button onclick="calcularDistancia()">Calcular Distancia (s)</button>
+        <p id="mruv_s_result"></p>
+    </div>
+
+    <script src="./JAVASCRIPT/script.js"></script>
+</body>
+</html>
